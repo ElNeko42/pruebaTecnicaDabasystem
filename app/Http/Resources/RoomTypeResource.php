@@ -6,5 +6,5 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class RoomTypeResource extends JsonResource
 {
-    public function toArray($request): array { return ['id' => $this->id, 'name' => $this->name]; }
+    public function toArray($request): array { return ['id' => $this->id, 'name' => $this->name, 'is_featured' => (bool) $this->is_featured]; }
 }

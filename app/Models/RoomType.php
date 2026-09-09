@@ -9,5 +9,7 @@ class RoomType extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name'];
+    protected $fillable = ['name', 'is_featured'];
+
+    protected $casts = ['is_featured' => 'boolean'];
 }

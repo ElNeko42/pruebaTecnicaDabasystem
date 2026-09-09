@@ -12,6 +12,6 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         User::updateOrCreate(['email' => 'admin@example.test'], ['name' => 'Admin Demo', 'password' => Hash::make('password'), 'role' => 'admin']);
-        foreach (['Individual', 'Doble', 'Suite', 'Familiar'] as $name) RoomType::firstOrCreate(['name' => $name]);
+        foreach (['Individual' => false, 'Doble' => false, 'Suite' => true, 'Familiar' => false] as $name => $isFeatured) RoomType::updateOrCreate(['name' => $name], ['is_featured' => $isFeatured]);
     }
 }
